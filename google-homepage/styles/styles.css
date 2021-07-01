@@ -1,22 +1,52 @@
-header {
-    text-align: right;
-    position: absolute;
+html{
     font-family: Arial, Helvetica, sans-serif; 
+    position: relative;
+    min-height: 100%;
+}
+
+header {
+    float: right;
+    display: block;
+    font-size: 13px;
+}
+
+.top-link {
     color:rgba(0,0,0,0.87);
+    text-align: right;
+    text-decoration: none;
+    margin: 2em 0.5em;
+    padding: 1em 0.5em;
 }
 
 .top-link:hover {
+    font-family: Arial, Helvetica, sans-serif; 
+    color:rgba(0,0,0,0.87);
+    text-align: right;
     text-decoration: underline;
 }
 
+top-link:active {
+    font-family: Arial, Helvetica, sans-serif; 
+    color:rgba(0,0,0,0.87);
+    text-align: right;
+    text-decoration: underline;
+}
+
+.top-link:visited{
+    font-family: Arial, Helvetica, sans-serif; 
+    color:rgba(0,0,0,0.87);
+    text-align: right;
+    text-decoration: none;
+}
+
 .profile-pic, .apps-icon {
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
     border-radius: 50%;
 }
 
 .profile-pic:hover, .apps-icon:hover {
-    border-width: 25px;
+    border-width: 50px;
     border-radius: 50%;    
     border-color: #5f6368;
 }
@@ -24,18 +54,94 @@ header {
 main {
     text-align: center;
     margin: auto;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 13px;
 }
 
 .logo {
     margin:auto;
+    padding: 10% 0%;
 }
 
 .search-box {
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 50px;
+    width: 25%;
 }
 
-.search-box:hover {
-    box-shadow: 0 0 10px 5px #000000;
+.search-icon, .mic-icon {
+    height: 25px;
+    width: 25px;
+}
+
+.button {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: rgb(107, 111, 113);
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.button:hover {
+    border: 1px solid #5f6368;
+    font-size: 14px;
+}
+
+.button:focus {
+    border: 1px solid #006aec;
+    font-size: 14px;
+}
+
+.lang-link {
+    color: rgb(46, 34, 178);
+    text-decoration: none;
+}
+
+.lang-link:hover {
+    text-decoration: underline;
+}
+
+.lang-link:visited {
+    color: rgb(163, 102, 194);
+    text-decoration: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    color: rgba(0,0,0,.54);
+    background-color: rgb(242, 242, 242);
+    font-size: 15px;
+}
+
+.footer-link {
+    color: rgba(0,0,0,.54);
+    text-decoration: none;
+}
+
+.footer-link:hover{
+    text-decoration: underline;
+}
+
+.footer-link:visited {
+    color: rgba(0,0,0,.54);
 }
 
