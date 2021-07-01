@@ -1,0 +1,41 @@
+header {
+    text-align: right;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif; 
+    color:rgba(0,0,0,0.87);
+}
+
+.top-link:hover {
+    text-decoration: underline;
+}
+
+.profile-pic, .apps-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.profile-pic:hover, .apps-icon:hover {
+    border-width: 25px;
+    border-radius: 50%;    
+    border-color: #5f6368;
+}
+
+main {
+    text-align: center;
+    margin: auto;
+}
+
+.logo {
+    margin:auto;
+}
+
+.search-box {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.search-box:hover {
+    box-shadow: 0 0 10px 5px #000000;
+}
+
