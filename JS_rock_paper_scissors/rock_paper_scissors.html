@@ -1,0 +1,135 @@
+<script>
+
+    function decode(n){
+        if(n == 0){
+            return "ROCK";
+        }
+        else if(n == 1){
+            return "PAPER";
+        }
+        else{
+            return "SCISSORS";
+        }
+    }
+
+
+    function computerPlay(){
+        return decode((Math.floor(Math.random()*98))%3);
+    }
+
+
+    function result(status, playerSelection, computerSelection){
+        if(status == 1){
+            return("You Win! " + playerSelection + " beats " + computerSelection);
+        }
+        else if(status == 0){
+            return("It's a Tie!");
+        }
+        else{
+            return("You Lose! " + computerSelection + " beats " + playerSelection);
+        }
+    }
+
+
+    function playRound(playerSelection, computerSelection){
+        
+        playerSelection = playerSelection.toUpperCase();
+
+        let status = 0;
+
+        if(playerSelection === computerSelection){
+            return status;
+        }
+
+        switch(playerSelection){
+            case("ROCK"):
+                if(computerSelection === "SCISSORS"){
+                    status = 1;
+                }
+                else{
+                    status = -1;
+                }
+                break;
+            case("PAPER"):
+                if(computerSelection === "ROCK"){
+                    status = 1;
+                }
+                else{
+                    status = -1;
+                }
+                break;
+            case("SCISSORS"):
+                if(computerSelection === "PAPER"){
+                    status = 1;
+                }
+                else{
+                    status = -1;
+                }
+                break;
+        }
+
+        return status;
+    }
+
+
+/*    function scoreUpdate(status){
+        if(status === 1){
+            playerScore += status;
+        }
+        else if(status === -1){
+            computerScore -= status;
+        }
+    }*/
+
+
+    function finalResult(playerScore, computerScore){
+        if(playerScore != computerScore){
+            return playerScore > computerScore ? `You Win!! ${playerScore} to ${computerScore}` : `You Lose :(  ${computerScore} to ${playerScore}`;
+        }
+        else{
+            return (`It's a Tie :| ( ${playerScore} vs ${computerScore} )`);
+        }
+    }
+
+    function isValid(playerSelection){
+        return (playerSelection === "ROCK" || playerSelection === "PAPER" || playerSelection === "SCISSORS");
+    }
+
+
+    function game(){
+
+        let playerScore = 0;
+        let computerScore = 0;
+        let numberRounds = 5;
+
+        for(let i = 0; i < numberRounds; i++){
+            
+            let playerSelection = 0;
+            while(!isValid(playerSelection)){
+                playerSelection = window.prompt("Please choose 'Rock', 'Paper', or 'Scissors'", "Rock");
+                playerSelection = playerSelection.toUpperCase();
+            }
+
+            let computerSelection = computerPlay();
+            
+            status = playRound(playerSelection, computerSelection);
+            
+            console.log(result(status, playerSelection, computerSelection));
+            
+            //scoreUpdate(status);
+            
+
+            if(status == 1){
+                playerScore += +status;
+            }
+            else if(status == -1){
+                computerScore -= +status;
+            }
+        }
+
+        console.log(finalResult(playerScore, computerScore));
+
+    }
+
+
+</script>
